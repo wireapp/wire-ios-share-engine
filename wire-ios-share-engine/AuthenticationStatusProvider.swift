@@ -16,20 +16,15 @@
 // along with this program. If not, see http://www.gnu.org/licenses/.
 //
 
-import Foundation
-import ZMCDataModel
 
-/// A conversation
-protocol Conversation : SharingTarget {
-    
-    /// User defined name for a group conversation, or standard name
-    var name : String { get }
-    
-    /// Type of the conversation
-    var conversationType : ZMConversationType { get }
-    
-    /// Image associated with conversation
-    /// E.g. will be nil for group conversation and will 
-    /// be user's image for one-to-one
-    var image : Data? { get }
+import Foundation
+
+enum AuthenticationState {
+    case authenticated, unauthenticated
+}
+
+protocol AuthenticationStatusProvider {
+
+    var state: AuthenticationState { get }
+
 }

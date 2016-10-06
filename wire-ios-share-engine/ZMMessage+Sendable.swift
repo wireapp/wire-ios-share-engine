@@ -16,20 +16,36 @@
 // along with this program. If not, see http://www.gnu.org/licenses/.
 //
 
+
 import Foundation
 import ZMCDataModel
 
-/// A conversation
-protocol Conversation : SharingTarget {
-    
-    /// User defined name for a group conversation, or standard name
-    var name : String { get }
-    
-    /// Type of the conversation
-    var conversationType : ZMConversationType { get }
-    
-    /// Image associated with conversation
-    /// E.g. will be nil for group conversation and will 
-    /// be user's image for one-to-one
-    var image : Data? { get }
+
+private extension ZMMessage {
+
+    var reportsProgress: Bool {
+        return fileMessageData != nil || imageMessageData != nil
+    }
+
 }
+
+//extension ZMMessage: Sendable {
+//
+//    public var deliveryProgress: Float? {
+//        if reportsProgress {
+//            // TODO
+//        }
+//        
+//        return nil
+//    }
+//    
+//    public func registerObserverToken(_ observer: SendableObserver) -> SendableObserverToken {
+//        return addObserver(observer)
+//    }
+//    
+//    
+//    public func remove(_ observerToken: SendableObserverToken) {
+//        removeObserver(observerToken)
+//    }
+//
+//}

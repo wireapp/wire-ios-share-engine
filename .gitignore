@@ -3,3 +3,15 @@ wire-ios-share-engine.xcodeproj/project.xcworkspace/xcuserdata
 tests.xml
 xcode-summary.log
 cobertura.xml
+WireShareEngine.framework.zip
+
+
+# Carthage
+
+Carthage/*
+
+# Test artefacts
+xcode-*.log
+tests.xml
+code-coverage/*
+cobertura.xml
