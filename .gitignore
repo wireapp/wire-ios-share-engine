@@ -4,6 +4,7 @@ tests.xml
 xcode-summary.log
 cobertura.xml
 WireShareEngine.framework.zip
+.DS_Store
 
 
 # Carthage
@@ -11,6 +12,7 @@ WireShareEngine.framework.zip
 Carthage/*
 
 # Test artefacts
+build/
 xcode-*.log
 tests.xml
 code-coverage/*
