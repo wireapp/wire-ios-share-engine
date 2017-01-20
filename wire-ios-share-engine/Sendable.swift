@@ -25,31 +25,14 @@ public protocol Sendable {
     /// The state of the delivery
     var deliveryState : ZMDeliveryState { get }
 
+    /// Whether the sendable is currently blocked because of missing clients
+    var blockedBecauseOfMissingClients : Bool { get }
+    
     /// The progress of the delivery, from 0 to 1.
     /// It will be nil if the progress can not be tracked.
     /// It will be 1 when the delivery is completed.
     var deliveryProgress : Float? { get }
     
-    /// Adds an observer for a change in status or delivery progress
-    /// - returns: the observable token
-    func registerObserverToken(_ observer: SendableObserver) -> SendableObserverToken
-    
-    /// Removes an observer token
-    func remove(_ observerToken: SendableObserverToken)
-    
     /// Expire message sending
     func cancel()
-}
-
-/// An observer of the progress of a Sendable
-public protocol SendableObserver: class {
-    
-    /// Either the delivery state or the delivery progress changed
-    func onDeliveryChanged()
-    
-}
-
-/// Wrapper around an observer token for SendableObserver
-public struct SendableObserverToken {
-    let token : AnyObject
 }
