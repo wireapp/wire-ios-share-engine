@@ -102,7 +102,6 @@
 		543972AC1E3154B900A02C5F /* SendableBatchObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendableBatchObserver.swift; sourceTree = "<group>"; };
 		5470D3E81D76E1B000FDE440 /* WireShareEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireShareEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5470D3EB1D76E1B000FDE440 /* WireShareEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireShareEngine.h; sourceTree = "<group>"; };
-		5470D3ED1D76E1B000FDE440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "wire-ios-share-engine/Info.plist"; sourceTree = "<group>"; };
 		5470D3F21D76E1B000FDE440 /* wire-ios-share-engineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wire-ios-share-engineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5470D3F91D76E1B000FDE440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5470D4041D76E2A400FDE440 /* libs.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = libs.xcconfig; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		CE7FBFAC1DFEF18D00E1C4C9 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 		CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGeneratorStoreTests.swift; sourceTree = "<group>"; };
 		CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationLoopTests.swift; sourceTree = "<group>"; };
+		F10C8E4E1E9647AF00020408 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireMockTransport.framework; path = Carthage/Build/iOS/WireMockTransport.framework; sourceTree = "<group>"; };
 		F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingSessionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +211,6 @@
 				5470D42B1D770CEE00FDE440 /* LICENSE */,
 				5470D42C1D770CEE00FDE440 /* README.md */,
 				5470D4021D76E2A400FDE440 /* Resources */,
-				5470D3ED1D76E1B000FDE440 /* Info.plist */,
 				5470D3EA1D76E1B000FDE440 /* wire-ios-share-engine */,
 				5470D3F61D76E1B000FDE440 /* wire-ios-share-engineTests */,
 				5470D3E91D76E1B000FDE440 /* Products */,
@@ -262,6 +261,7 @@
 		5470D4021D76E2A400FDE440 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F10C8E4E1E9647AF00020408 /* Info.plist */,
 				5470D4031D76E2A400FDE440 /* Configurations */,
 			);
 			path = Resources;
@@ -554,7 +554,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "wire-ios-share-engine/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
@@ -577,7 +577,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "wire-ios-share-engine/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
