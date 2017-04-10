@@ -51,17 +51,17 @@
 		F125E9AC1E28D4F6006583A2 /* WireMockTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */; };
 		F125E9AD1E28D603006583A2 /* WireMockTransport.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F125E9B51E28DB06006583A2 /* SharingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */; };
-		F1DABF8B1E9B897900AD2324 /* AuthenticationStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF801E9B897900AD2324 /* AuthenticationStatusProvider.swift */; };
-		F1DABF8C1E9B897900AD2324 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF811E9B897900AD2324 /* Conversation.swift */; };
-		F1DABF8D1E9B897900AD2324 /* OperationLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF821E9B897900AD2324 /* OperationLoop.swift */; };
-		F1DABF8E1E9B897900AD2324 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF831E9B897900AD2324 /* Sendable.swift */; };
-		F1DABF8F1E9B897900AD2324 /* SendableBatchObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF841E9B897900AD2324 /* SendableBatchObserver.swift */; };
-		F1DABF901E9B897900AD2324 /* SharingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF851E9B897900AD2324 /* SharingSession.swift */; };
-		F1DABF911E9B897900AD2324 /* SharingTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF861E9B897900AD2324 /* SharingTarget.swift */; };
-		F1DABF921E9B897900AD2324 /* StrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF871E9B897900AD2324 /* StrategyFactory.swift */; };
-		F1DABF931E9B897900AD2324 /* WireShareEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DABF881E9B897900AD2324 /* WireShareEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1DABF941E9B897900AD2324 /* ZMConversation+Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF891E9B897900AD2324 /* ZMConversation+Conversation.swift */; };
-		F1DABF951E9B897900AD2324 /* ZMMessage+Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF8A1E9B897900AD2324 /* ZMMessage+Sendable.swift */; };
+		F1DABFA21E9B8B6100AD2324 /* AuthenticationStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF971E9B8B6100AD2324 /* AuthenticationStatusProvider.swift */; };
+		F1DABFA31E9B8B6100AD2324 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF981E9B8B6100AD2324 /* Conversation.swift */; };
+		F1DABFA41E9B8B6100AD2324 /* OperationLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF991E9B8B6100AD2324 /* OperationLoop.swift */; };
+		F1DABFA51E9B8B6100AD2324 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF9A1E9B8B6100AD2324 /* Sendable.swift */; };
+		F1DABFA61E9B8B6100AD2324 /* SendableBatchObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF9B1E9B8B6100AD2324 /* SendableBatchObserver.swift */; };
+		F1DABFA71E9B8B6100AD2324 /* SharingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF9C1E9B8B6100AD2324 /* SharingSession.swift */; };
+		F1DABFA81E9B8B6100AD2324 /* SharingTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF9D1E9B8B6100AD2324 /* SharingTarget.swift */; };
+		F1DABFA91E9B8B6100AD2324 /* StrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABF9E1E9B8B6100AD2324 /* StrategyFactory.swift */; };
+		F1DABFAA1E9B8B6100AD2324 /* WireShareEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DABF9F1E9B8B6100AD2324 /* WireShareEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1DABFAB1E9B8B6100AD2324 /* ZMConversation+Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABFA01E9B8B6100AD2324 /* ZMConversation+Conversation.swift */; };
+		F1DABFAC1E9B8B6100AD2324 /* ZMMessage+Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DABFA11E9B8B6100AD2324 /* ZMMessage+Sendable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,17 +146,17 @@
 		F10C8E4E1E9647AF00020408 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireMockTransport.framework; path = Carthage/Build/iOS/WireMockTransport.framework; sourceTree = "<group>"; };
 		F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingSessionTests.swift; sourceTree = "<group>"; };
-		F1DABF801E9B897900AD2324 /* AuthenticationStatusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationStatusProvider.swift; sourceTree = "<group>"; };
-		F1DABF811E9B897900AD2324 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
-		F1DABF821E9B897900AD2324 /* OperationLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationLoop.swift; sourceTree = "<group>"; };
-		F1DABF831E9B897900AD2324 /* Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
-		F1DABF841E9B897900AD2324 /* SendableBatchObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendableBatchObserver.swift; sourceTree = "<group>"; };
-		F1DABF851E9B897900AD2324 /* SharingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingSession.swift; sourceTree = "<group>"; };
-		F1DABF861E9B897900AD2324 /* SharingTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingTarget.swift; sourceTree = "<group>"; };
-		F1DABF871E9B897900AD2324 /* StrategyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyFactory.swift; sourceTree = "<group>"; };
-		F1DABF881E9B897900AD2324 /* WireShareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireShareEngine.h; sourceTree = "<group>"; };
-		F1DABF891E9B897900AD2324 /* ZMConversation+Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZMConversation+Conversation.swift"; sourceTree = "<group>"; };
-		F1DABF8A1E9B897900AD2324 /* ZMMessage+Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZMMessage+Sendable.swift"; sourceTree = "<group>"; };
+		F1DABF971E9B8B6100AD2324 /* AuthenticationStatusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationStatusProvider.swift; sourceTree = "<group>"; };
+		F1DABF981E9B8B6100AD2324 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		F1DABF991E9B8B6100AD2324 /* OperationLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationLoop.swift; sourceTree = "<group>"; };
+		F1DABF9A1E9B8B6100AD2324 /* Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
+		F1DABF9B1E9B8B6100AD2324 /* SendableBatchObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendableBatchObserver.swift; sourceTree = "<group>"; };
+		F1DABF9C1E9B8B6100AD2324 /* SharingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingSession.swift; sourceTree = "<group>"; };
+		F1DABF9D1E9B8B6100AD2324 /* SharingTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingTarget.swift; sourceTree = "<group>"; };
+		F1DABF9E1E9B8B6100AD2324 /* StrategyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyFactory.swift; sourceTree = "<group>"; };
+		F1DABF9F1E9B8B6100AD2324 /* WireShareEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireShareEngine.h; sourceTree = "<group>"; };
+		F1DABFA01E9B8B6100AD2324 /* ZMConversation+Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZMConversation+Conversation.swift"; sourceTree = "<group>"; };
+		F1DABFA11E9B8B6100AD2324 /* ZMMessage+Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZMMessage+Sendable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 			children = (
 				5470D42B1D770CEE00FDE440 /* LICENSE */,
 				5470D42C1D770CEE00FDE440 /* README.md */,
-				F1DABF7F1E9B897900AD2324 /* wire-ios-share-engine */,
+				F1DABF961E9B8B6100AD2324 /* Sources */,
 				5470D3F61D76E1B000FDE440 /* wire-ios-share-engineTests */,
 				5470D4021D76E2A400FDE440 /* Resources */,
 				5470D3E91D76E1B000FDE440 /* Products */,
@@ -307,22 +307,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F1DABF7F1E9B897900AD2324 /* wire-ios-share-engine */ = {
+		F1DABF961E9B8B6100AD2324 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F1DABF801E9B897900AD2324 /* AuthenticationStatusProvider.swift */,
-				F1DABF811E9B897900AD2324 /* Conversation.swift */,
-				F1DABF821E9B897900AD2324 /* OperationLoop.swift */,
-				F1DABF831E9B897900AD2324 /* Sendable.swift */,
-				F1DABF841E9B897900AD2324 /* SendableBatchObserver.swift */,
-				F1DABF851E9B897900AD2324 /* SharingSession.swift */,
-				F1DABF861E9B897900AD2324 /* SharingTarget.swift */,
-				F1DABF871E9B897900AD2324 /* StrategyFactory.swift */,
-				F1DABF881E9B897900AD2324 /* WireShareEngine.h */,
-				F1DABF891E9B897900AD2324 /* ZMConversation+Conversation.swift */,
-				F1DABF8A1E9B897900AD2324 /* ZMMessage+Sendable.swift */,
+				F1DABF971E9B8B6100AD2324 /* AuthenticationStatusProvider.swift */,
+				F1DABF981E9B8B6100AD2324 /* Conversation.swift */,
+				F1DABF991E9B8B6100AD2324 /* OperationLoop.swift */,
+				F1DABF9A1E9B8B6100AD2324 /* Sendable.swift */,
+				F1DABF9B1E9B8B6100AD2324 /* SendableBatchObserver.swift */,
+				F1DABF9C1E9B8B6100AD2324 /* SharingSession.swift */,
+				F1DABF9D1E9B8B6100AD2324 /* SharingTarget.swift */,
+				F1DABF9E1E9B8B6100AD2324 /* StrategyFactory.swift */,
+				F1DABF9F1E9B8B6100AD2324 /* WireShareEngine.h */,
+				F1DABFA01E9B8B6100AD2324 /* ZMConversation+Conversation.swift */,
+				F1DABFA11E9B8B6100AD2324 /* ZMMessage+Sendable.swift */,
 			);
-			path = "wire-ios-share-engine";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +332,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DABF931E9B897900AD2324 /* WireShareEngine.h in Headers */,
+				F1DABFAA1E9B8B6100AD2324 /* WireShareEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,16 +471,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DABF8C1E9B897900AD2324 /* Conversation.swift in Sources */,
-				F1DABF941E9B897900AD2324 /* ZMConversation+Conversation.swift in Sources */,
-				F1DABF8B1E9B897900AD2324 /* AuthenticationStatusProvider.swift in Sources */,
-				F1DABF8D1E9B897900AD2324 /* OperationLoop.swift in Sources */,
-				F1DABF921E9B897900AD2324 /* StrategyFactory.swift in Sources */,
-				F1DABF911E9B897900AD2324 /* SharingTarget.swift in Sources */,
-				F1DABF951E9B897900AD2324 /* ZMMessage+Sendable.swift in Sources */,
-				F1DABF8F1E9B897900AD2324 /* SendableBatchObserver.swift in Sources */,
-				F1DABF8E1E9B897900AD2324 /* Sendable.swift in Sources */,
-				F1DABF901E9B897900AD2324 /* SharingSession.swift in Sources */,
+				F1DABFA31E9B8B6100AD2324 /* Conversation.swift in Sources */,
+				F1DABFAB1E9B8B6100AD2324 /* ZMConversation+Conversation.swift in Sources */,
+				F1DABFA21E9B8B6100AD2324 /* AuthenticationStatusProvider.swift in Sources */,
+				F1DABFA41E9B8B6100AD2324 /* OperationLoop.swift in Sources */,
+				F1DABFA91E9B8B6100AD2324 /* StrategyFactory.swift in Sources */,
+				F1DABFA81E9B8B6100AD2324 /* SharingTarget.swift in Sources */,
+				F1DABFAC1E9B8B6100AD2324 /* ZMMessage+Sendable.swift in Sources */,
+				F1DABFA61E9B8B6100AD2324 /* SendableBatchObserver.swift in Sources */,
+				F1DABFA51E9B8B6100AD2324 /* Sendable.swift in Sources */,
+				F1DABFA71E9B8B6100AD2324 /* SharingSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
