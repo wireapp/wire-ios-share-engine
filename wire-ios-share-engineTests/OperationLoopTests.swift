@@ -33,18 +33,18 @@ class OperationLoopTests :  ZMTBaseTest {
     
     override func setUp() {
         super.setUp()
-        
+        let accountId = UUID()
         let directoryURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        databaseDirectory = directoryURL.appendingPathComponent("wire.database")
-        otrDirectory = directoryURL.appendingPathComponent("otr")
+        databaseDirectory = FileManager.currentStoreURLForAccount(with: accountId, in: directoryURL)
+        otrDirectory = FileManager.keyStoreURLForAccount(with: accountId, in: directoryURL, createParentIfNeeded: true)
         
         NSManagedObjectContext.setUseInMemoryStore(true)
         resetState()
         ZMPersistentCookieStorage.setDoNotPersistToKeychain(true)
         
-        uiMoc = NSManagedObjectContext.createUserInterfaceContextWithStore(at: databaseDirectory)!
+        uiMoc = NSManagedObjectContext.createUserInterfaceContextForAccount(withIdentifier: accountId, inSharedContainerAt: directoryURL)!
         uiMoc.add(self.dispatchGroup)
-        syncMoc = NSManagedObjectContext.createSyncContextWithStore(at: databaseDirectory, keyStore: otrDirectory)!
+        syncMoc = NSManagedObjectContext.createSyncContextForAccount(withIdentifier: accountId, inSharedContainerAt: directoryURL)!
         syncMoc.performGroupedBlockAndWait {
             self.syncMoc.add(self.dispatchGroup)
             self.syncMoc.saveOrRollback()

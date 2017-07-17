@@ -219,19 +219,16 @@ public class SharingSession {
     /// no user is currently logged in.
     /// - returns: The initialized session object if no error is thrown
     
-    public convenience init(applicationGroupIdentifier: String, hostBundleIdentifier: String) throws {
+    public convenience init(applicationGroupIdentifier: String, accountIdentifier: UUID?, hostBundleIdentifier: String) throws {
         
         guard let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: applicationGroupIdentifier) else {
             throw InitializationError.missingSharedContainer
         }
         
-        let storeURL = sharedContainerURL.appendingPathComponent(hostBundleIdentifier, isDirectory: true).appendingPathComponent("store.wiredatabase")
-        let keyStoreURL = sharedContainerURL
-        
-        guard !NSManagedObjectContext.needsToPrepareLocalStore(at: storeURL) else { throw InitializationError.needsMigration }
+        guard !NSManagedObjectContext.needsToPrepareLocalStoreForAccount(withIdentifier: accountIdentifier, inSharedContainerAt: sharedContainerURL) else { throw InitializationError.needsMigration }
 
-        let userInterfaceContext = NSManagedObjectContext.createUserInterfaceContextWithStore(at: storeURL)!
-        let syncContext = NSManagedObjectContext.createSyncContextWithStore(at: storeURL, keyStore: keyStoreURL)!
+        let userInterfaceContext = NSManagedObjectContext.createUserInterfaceContextForAccount(withIdentifier: accountIdentifier, inSharedContainerAt: sharedContainerURL)!
+        let syncContext = NSManagedObjectContext.createSyncContextForAccount(withIdentifier: accountIdentifier, inSharedContainerAt: sharedContainerURL)!
         
         userInterfaceContext.zm_sync = syncContext
         syncContext.zm_userInterface = userInterfaceContext
