@@ -239,7 +239,7 @@ public class SharingSession {
         _ = group.wait(timeout: .distantFuture)
         
         let environment = ZMBackendEnvironment(userDefaults: UserDefaults.shared())
-        let cookieStorage = ZMPersistentCookieStorage(forServerName: environment.backendURL.host!)
+        let cookieStorage = ZMPersistentCookieStorage(forServerName: environment.backendURL.host!, userIdentifier: accountIdentifier)
                 
         let transportSession =  ZMTransportSession(
             baseURL: environment.backendURL,
