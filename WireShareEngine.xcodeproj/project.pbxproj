@@ -103,7 +103,7 @@
 
 /* Begin PBXFileReference section */
 		5470D3E81D76E1B000FDE440 /* WireShareEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireShareEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5470D3F21D76E1B000FDE440 /* wire-ios-share-engineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wire-ios-share-engineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5470D3F21D76E1B000FDE440 /* WireShareEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireShareEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5470D3F91D76E1B000FDE440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5470D4041D76E2A400FDE440 /* libs.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = libs.xcconfig; sourceTree = "<group>"; };
 		5470D4051D76E2A400FDE440 /* version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = version.xcconfig; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 				5470D42B1D770CEE00FDE440 /* LICENSE */,
 				5470D42C1D770CEE00FDE440 /* README.md */,
 				F1DABF961E9B8B6100AD2324 /* Sources */,
-				5470D3F61D76E1B000FDE440 /* wire-ios-share-engineTests */,
+				5470D3F61D76E1B000FDE440 /* WireShareEngineTests */,
 				5470D4021D76E2A400FDE440 /* Resources */,
 				5470D3E91D76E1B000FDE440 /* Products */,
 				5470D4331D77165E00FDE440 /* Frameworks */,
@@ -231,12 +231,12 @@
 			isa = PBXGroup;
 			children = (
 				5470D3E81D76E1B000FDE440 /* WireShareEngine.framework */,
-				5470D3F21D76E1B000FDE440 /* wire-ios-share-engineTests.xctest */,
+				5470D3F21D76E1B000FDE440 /* WireShareEngineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5470D3F61D76E1B000FDE440 /* wire-ios-share-engineTests */ = {
+		5470D3F61D76E1B000FDE440 /* WireShareEngineTests */ = {
 			isa = PBXGroup;
 			children = (
 				5470D3F91D76E1B000FDE440 /* Info.plist */,
@@ -246,7 +246,7 @@
 				CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */,
 				CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */,
 			);
-			path = "wire-ios-share-engineTests";
+			path = WireShareEngineTests;
 			sourceTree = "<group>";
 		};
 		5470D4021D76E2A400FDE440 /* Resources */ = {
@@ -348,9 +348,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5470D3E71D76E1B000FDE440 /* wire-ios-share-engine */ = {
+		5470D3E71D76E1B000FDE440 /* WireShareEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5470D3FC1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "wire-ios-share-engine" */;
+			buildConfigurationList = 5470D3FC1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "WireShareEngine" */;
 			buildPhases = (
 				5470D3E31D76E1B000FDE440 /* Sources */,
 				5470D3E41D76E1B000FDE440 /* Frameworks */,
@@ -361,14 +361,14 @@
 			);
 			dependencies = (
 			);
-			name = "wire-ios-share-engine";
+			name = WireShareEngine;
 			productName = "wire-ios-share-engine";
 			productReference = 5470D3E81D76E1B000FDE440 /* WireShareEngine.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5470D3F11D76E1B000FDE440 /* wire-ios-share-engineTests */ = {
+		5470D3F11D76E1B000FDE440 /* WireShareEngineTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5470D3FF1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "wire-ios-share-engineTests" */;
+			buildConfigurationList = 5470D3FF1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "WireShareEngineTests" */;
 			buildPhases = (
 				5470D3EE1D76E1B000FDE440 /* Sources */,
 				5470D3EF1D76E1B000FDE440 /* Frameworks */,
@@ -381,9 +381,9 @@
 			dependencies = (
 				5470D3F51D76E1B000FDE440 /* PBXTargetDependency */,
 			);
-			name = "wire-ios-share-engineTests";
+			name = WireShareEngineTests;
 			productName = "wire-ios-share-engineTests";
-			productReference = 5470D3F21D76E1B000FDE440 /* wire-ios-share-engineTests.xctest */;
+			productReference = 5470D3F21D76E1B000FDE440 /* WireShareEngineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +407,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5470D3E21D76E1B000FDE440 /* Build configuration list for PBXProject "wire-ios-share-engine" */;
+			buildConfigurationList = 5470D3E21D76E1B000FDE440 /* Build configuration list for PBXProject "WireShareEngine" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -420,8 +420,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5470D3E71D76E1B000FDE440 /* wire-ios-share-engine */,
-				5470D3F11D76E1B000FDE440 /* wire-ios-share-engineTests */,
+				5470D3E71D76E1B000FDE440 /* WireShareEngine */,
+				5470D3F11D76E1B000FDE440 /* WireShareEngineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -512,7 +512,7 @@
 /* Begin PBXTargetDependency section */
 		5470D3F51D76E1B000FDE440 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5470D3E71D76E1B000FDE440 /* wire-ios-share-engine */;
+			target = 5470D3E71D76E1B000FDE440 /* WireShareEngine */;
 			targetProxy = 5470D3F41D76E1B000FDE440 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -631,7 +631,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5470D3E21D76E1B000FDE440 /* Build configuration list for PBXProject "wire-ios-share-engine" */ = {
+		5470D3E21D76E1B000FDE440 /* Build configuration list for PBXProject "WireShareEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5470D3FA1D76E1B000FDE440 /* Debug */,
@@ -640,7 +640,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5470D3FC1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "wire-ios-share-engine" */ = {
+		5470D3FC1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "WireShareEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5470D3FD1D76E1B000FDE440 /* Debug */,
@@ -649,7 +649,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5470D3FF1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "wire-ios-share-engineTests" */ = {
+		5470D3FF1D76E1B000FDE440 /* Build configuration list for PBXNativeTarget "WireShareEngineTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5470D4001D76E1B000FDE440 /* Debug */,
