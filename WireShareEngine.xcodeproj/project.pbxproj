@@ -138,7 +138,7 @@
 		5470D4531D77169900FDE440 /* WireTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireTransport.framework; path = Carthage/Build/iOS/WireTransport.framework; sourceTree = "<group>"; };
 		5470D4541D77169900FDE440 /* WireUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireUtilities.framework; path = Carthage/Build/iOS/WireUtilities.framework; sourceTree = "<group>"; };
 		54FB03B01E42202A000E13DC /* libPhoneNumberiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libPhoneNumberiOS.framework; path = Carthage/Build/iOS/libPhoneNumberiOS.framework; sourceTree = "<group>"; };
-		BF64A2111D796DC300725918 /* wire-ios-share-engineTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wire-ios-share-engineTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF64A2111D796DC300725918 /* WireShareEngine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WireShareEngine-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFA18BD31D806050005C281B /* BaseSharingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSharingSessionTests.swift; sourceTree = "<group>"; };
 		CE3EB5961DFEBDCF001FE3AE /* WireMessageStrategy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireMessageStrategy.framework; path = Carthage/Build/iOS/WireMessageStrategy.framework; sourceTree = "<group>"; };
 		CE3EB5971DFEBDCF001FE3AE /* WireRequestStrategy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireRequestStrategy.framework; path = Carthage/Build/iOS/WireRequestStrategy.framework; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 				5470D3F91D76E1B000FDE440 /* Info.plist */,
 				BFA18BD31D806050005C281B /* BaseSharingSessionTests.swift */,
 				F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */,
-				BF64A2111D796DC300725918 /* wire-ios-share-engineTests-Bridging-Header.h */,
+				BF64A2111D796DC300725918 /* WireShareEngine-Bridging-Header.h */,
 				CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */,
 				CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */,
 			);
@@ -603,11 +603,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "wire-ios-share-engineTests/Info.plist";
+				INFOPLIST_FILE = WireShareEngineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engineTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wire-ios-share-engineTests/wire-ios-share-engineTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WireShareEngineTests/WireShareEngine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -619,11 +619,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "wire-ios-share-engineTests/Info.plist";
+				INFOPLIST_FILE = WireShareEngineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engineTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wire-ios-share-engineTests/wire-ios-share-engineTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WireShareEngineTests/WireShareEngine-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
