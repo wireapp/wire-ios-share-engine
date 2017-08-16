@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let vc = UIViewController()
         let textView = UITextView()
-        textView.text = "This is the test host application for WireRequestStrategy tests."
+        textView.text = "This is the test host application for WireShareEngine tests."
         vc.view.addSubview(textView)
         textView.backgroundColor = .green
         textView.textContainerInset = .init(top: 22, left: 22, bottom: 22, right: 22)
