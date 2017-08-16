@@ -240,7 +240,7 @@ public class SharingSession {
         
         let environment = ZMBackendEnvironment(userDefaults: UserDefaults.shared())
         let cookieStorage = ZMPersistentCookieStorage(forServerName: environment.backendURL.host!, userIdentifier: accountIdentifier)
-        let reachabilityGroup = ZMSDispatchGroup(dispatchGroup: DispatchGroup(), label: "Session manager reachability")!
+        let reachabilityGroup = ZMSDispatchGroup(dispatchGroup: DispatchGroup(), label: "Sharing session reachability")!
         let serverNames = [environment.backendURL, environment.backendWSURL].flatMap{ $0.host }
         let reachability = ZMReachability(serverNames: serverNames, observer: nil, queue: .main, group: reachabilityGroup)
         
