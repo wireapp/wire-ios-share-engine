@@ -2,6 +2,7 @@
 
 [![Wire logo](https://github.com/wireapp/wire/blob/master/assets/header-small.png?raw=true)](https://wire.com/jobs/)
 
+[![CircleCI](https://circleci.com/gh/wireapp/wire-ios-share-engine.svg?style=shield)](https://circleci.com/gh/wireapp/wire-ios-share-engine) [![codecov](https://codecov.io/gh/wireapp/wire-ios-share-engine/branch/develop/graph/badge.svg)](https://codecov.io/gh/wireapp/wire-ios-share-engine)
 
 This repository is part of the source code of Wire. You can find more information at [wire.com](https://wire.com) or by contacting opensource@wire.com.
 
@@ -11,5 +12,4 @@ For licensing information, see the attached LICENSE file and the list of third-p
 
 # wire-ios-share-engine
 
-This framework is part of Wire iOS. Visit the [Wire iOS repository](http://github.com/wireapp/wire-ios) for an overview of the architecture.
-
+This framework is part of Wire iOS. Additional documentation is available in the [Wire iOS wiki](https://github.com/wireapp/wire-ios/wiki).
