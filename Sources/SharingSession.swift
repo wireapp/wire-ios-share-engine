@@ -191,6 +191,8 @@ public class SharingSession {
 
     let transportSession: ZMTransportSession
     
+    var reachability: ZMReachability?
+    
     private var contextDirectory: ManagedObjectContextDirectory!
     
     /// The `ZMConversationListDirectory` containing all conversation lists
@@ -275,6 +277,8 @@ public class SharingSession {
             cachesDirectory: FileManager.default.cachesURLForAccount(with: accountIdentifier, in: sharedContainerURL),
             accountContainer: StorageStack.accountFolder(accountIdentifier: accountIdentifier, applicationContainer: sharedContainerURL)
         )
+        
+        self.reachability = reachability
 
     }
     
@@ -341,7 +345,7 @@ public class SharingSession {
             NotificationCenter.default.removeObserver(token)
             contextSaveObserverToken = nil
         }
-        transportSession.reachability.tearDown()
+        reachability?.tearDown()
         transportSession.tearDown()
         strategyFactory.tearDown()
         StorageStack.reset()
