@@ -341,6 +341,7 @@ public class SharingSession {
             NotificationCenter.default.removeObserver(token)
             contextSaveObserverToken = nil
         }
+        transportSession.reachability.tearDown()
         transportSession.tearDown()
         strategyFactory.tearDown()
         StorageStack.reset()
