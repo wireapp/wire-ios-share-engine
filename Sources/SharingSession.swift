@@ -268,7 +268,7 @@ public class SharingSession {
             cookieStorage: cookieStorage,
             reachability: reachability,
             initialAccessToken: ZMAccessToken(),
-            sharedContainerIdentifier: nil
+            sharedContainerIdentifier: applicationGroupIdentifier
         )
         
         try self.init(
