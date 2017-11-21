@@ -205,7 +205,8 @@ public class SharingSession {
         return applicationStatusDirectory.authenticationStatus.state == .authenticated && applicationStatusDirectory.clientRegistrationStatus.clientIsReadyForRequests
     }
     
-    /// Flag to remember if the user authenticated through LocalAuthentication
+    /// To check if the user has already authenticated through LocalAuthentication
+    /// during the current session.
     public var isAuthenticated : Bool = false
 
     /// List of non-archived conversations in which the user can write
