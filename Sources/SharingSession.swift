@@ -207,7 +207,7 @@ public class SharingSession {
     
     /// To check if the user has already authenticated through LocalAuthentication
     /// during the current session.
-    public var isAuthenticated : Bool = false
+    public var isLocalAuthenticationGranted : Bool = false
 
     /// List of non-archived conversations in which the user can write
     /// The list will be sorted by relevance
