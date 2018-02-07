@@ -170,7 +170,7 @@ public class SharingSession {
     /// - NeedsMigration: The database needs a migration which is only done in the main app
     /// - LoggedOut: No user is logged in
     /// - missingSharedContainer: The shared container is missing
-    enum InitializationError: Error {
+    public enum InitializationError: Error {
         case needsMigration, loggedOut, missingSharedContainer
     }
     
