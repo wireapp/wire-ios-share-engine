@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "fix/uuid-validation"
+github "wireapp/wire-ios-request-strategy" ~> 87.0
