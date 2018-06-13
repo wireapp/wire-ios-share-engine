@@ -595,6 +595,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = Resources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -605,6 +606,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = Resources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
