@@ -255,7 +255,7 @@ public class SharingSession {
         }
         
         while !didCreateStorageStack {
-            if !RunLoop.current.run(mode: .defaultRunLoopMode, before: Date(timeIntervalSinceNow: 0.002)) {
+            if !RunLoop.current.run(mode: RunLoop.Mode.default, before: Date(timeIntervalSinceNow: 0.002)) {
                 Thread.sleep(forTimeInterval: 0.002)
             }
         }
@@ -388,17 +388,9 @@ public class SharingSession {
 }
 
 extension SharingSession: LinkPreviewDetectorType {
-    public var delegate: LinkPreviewDetectorDelegate? {
-        get {
-            return applicationStatusDirectory.linkPreviewDetector.delegate
-        }
-        set(newValue) {
-            applicationStatusDirectory.linkPreviewDetector.delegate = newValue
-        }
-    }
 
-    @objc public func downloadLinkPreviews(inText text: String, completion: @escaping ([LinkPreview]) -> Void) {
-        applicationStatusDirectory.linkPreviewDetector.downloadLinkPreviews?(inText: text, completion: completion)
+    public func downloadLinkPreviews(inText text: String, excluding: [Range<Int>], completion: @escaping ([LinkPreview]) -> Void) {
+        applicationStatusDirectory.linkPreviewDetector.downloadLinkPreviews(inText: text, excluding: excluding, completion: completion)
     }
 
 }
