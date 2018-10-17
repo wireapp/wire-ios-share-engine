@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/unregistered-user-email-code"
+github "wireapp/wire-ios-request-strategy" ~> 107.0
