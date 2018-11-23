@@ -175,6 +175,7 @@ final class OperationLoop : NSObject, RequestAvailableObserver {
             context.processPendingChanges() // We need this because merging sometimes leaves the MOC in a 'dirty' state
 
             NotificationCenter.default.post(name: contextWasMergedNotification, object: context, userInfo: notification.userInfo)
+            DarwinNotification.contextWasMerged.post()
         }
     }
     
