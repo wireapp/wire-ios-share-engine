@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/read-receipts-user-setting"
+github "wireapp/wire-ios-request-strategy" ~> 111.0
