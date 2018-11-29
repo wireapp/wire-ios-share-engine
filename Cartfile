@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/background-task-manager"
+github "wireapp/wire-ios-request-strategy" ~> 110.0
