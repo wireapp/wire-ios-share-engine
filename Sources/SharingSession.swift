@@ -388,7 +388,7 @@ public class SharingSession {
 
 extension SharingSession: LinkPreviewDetectorType {
 
-    public func downloadLinkPreviews(inText text: String, excluding: [Range<Int>], completion: @escaping ([LinkPreview]) -> Void) {
+    public func downloadLinkPreviews(inText text: String, excluding: [Range<Int>], completion: @escaping ([WireLinkPreview.LinkPreview]) -> Void) {
         applicationStatusDirectory.linkPreviewDetector.downloadLinkPreviews(inText: text, excluding: excluding, completion: completion)
     }
 
