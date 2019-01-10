@@ -50,7 +50,6 @@
 		CE7FBFAD1DFEF18D00E1C4C9 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FBFAC1DFEF18D00E1C4C9 /* OCMock.framework */; };
 		CE7FBFC41E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */; };
 		CEB50AEC1DF9BADF00211B30 /* OperationLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */; };
-		EE06B16F21A6E5C600499D39 /* DarwinNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE06B16E21A6E5C600499D39 /* DarwinNotification.swift */; };
 		F125E9AC1E28D4F6006583A2 /* WireMockTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */; };
 		F125E9AD1E28D603006583A2 /* WireMockTransport.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F125E9B51E28DB06006583A2 /* SharingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */; };
@@ -149,7 +148,6 @@
 		CE7FBFAC1DFEF18D00E1C4C9 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 		CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGeneratorStoreTests.swift; sourceTree = "<group>"; };
 		CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationLoopTests.swift; sourceTree = "<group>"; };
-		EE06B16E21A6E5C600499D39 /* DarwinNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarwinNotification.swift; sourceTree = "<group>"; };
 		F10C8E4E1E9647AF00020408 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F125E9AB1E28D4F6006583A2 /* WireMockTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WireMockTransport.framework; path = Carthage/Build/iOS/WireMockTransport.framework; sourceTree = "<group>"; };
 		F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingSessionTests.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				F1DABF9F1E9B8B6100AD2324 /* WireShareEngine.h */,
 				F1DABFA01E9B8B6100AD2324 /* ZMConversation+Conversation.swift */,
 				F1DABFA11E9B8B6100AD2324 /* ZMMessage+Sendable.swift */,
-				EE06B16E21A6E5C600499D39 /* DarwinNotification.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -541,7 +538,6 @@
 				F1DABFA21E9B8B6100AD2324 /* AuthenticationStatusProvider.swift in Sources */,
 				F1DABFA41E9B8B6100AD2324 /* OperationLoop.swift in Sources */,
 				F1DABFA91E9B8B6100AD2324 /* StrategyFactory.swift in Sources */,
-				EE06B16F21A6E5C600499D39 /* DarwinNotification.swift in Sources */,
 				F1DABFA81E9B8B6100AD2324 /* SharingTarget.swift in Sources */,
 				F1DABFAC1E9B8B6100AD2324 /* ZMMessage+Sendable.swift in Sources */,
 				F1DABFA61E9B8B6100AD2324 /* SendableBatchObserver.swift in Sources */,
