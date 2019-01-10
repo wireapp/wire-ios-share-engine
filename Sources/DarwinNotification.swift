@@ -18,11 +18,10 @@
 
 import Foundation
 
-/**
- *  Darwin Notifications are used to communicate between an extension and the
- *  containing app. Add a case to the enum for each type of notification
- *  you want to post/observe.
- */
+/// Darwin Notifications are used to communicate between an extension and the
+/// containing app. Add a case to the enum for each type of notification
+/// you want to post/observe.
+///
 public enum DarwinNotification: String {
     case contextWasMerged = "com.wire.wire-ios-share-engine.context-was-merged"
     
