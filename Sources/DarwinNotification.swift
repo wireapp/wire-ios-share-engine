@@ -23,7 +23,7 @@ import Foundation
 /// you want to post/observe.
 ///
 public enum DarwinNotification: String {
-    case contextWasMerged = "com.wire.wire-ios-share-engine.context-was-merged"
+    case shareExtDidSaveNote = "com.wire.wire-ios-share-engine.share-ext-did-save-note"
     
     public var name: CFNotificationName {
         return CFNotificationName(rawValue: self.rawValue as CFString)
