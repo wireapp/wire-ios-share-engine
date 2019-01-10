@@ -1,6 +1,6 @@
 //
 // Wire
-// Copyright (C) 2018 Wire Swiss GmbH
+// Copyright (C) 2019 Wire Swiss GmbH
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -24,7 +24,11 @@ import Foundation
  *  you want to post/observe.
  */
 public enum DarwinNotification: String {
-    case contextWasMerged
+    case contextWasMerged = "com.wire.wire-ios-share-engine.context-was-merged"
+    
+    public var name: CFNotificationName {
+        return CFNotificationName(rawValue: self.rawValue as CFString)
+    }
     
     public func observe(using block: @escaping CFNotificationCallback) {
         let nc = CFNotificationCenterGetDarwinNotifyCenter()
@@ -32,7 +36,7 @@ public enum DarwinNotification: String {
             nc,                                 // notification center
             nil,                                // observer
             block,                              // callback
-            self.rawValue as CFString,          // notification name
+            name.rawValue,                      // notification name
             nil,                                // object
             .deliverImmediately                 // suspension behaviour
         )
@@ -40,13 +44,12 @@ public enum DarwinNotification: String {
     
     public func post() {
         let nc = CFNotificationCenterGetDarwinNotifyCenter()
-        let name = CFNotificationName(rawValue: self.rawValue as CFString)
         CFNotificationCenterPostNotification(
-            nc,                             // notification center
-            name,                           // notification name
-            nil,                            // object
-            nil,                            // user info
-            true                            // deliver immediately
+            nc,                                 // notification center
+            name,                               // notification name
+            nil,                                // object
+            nil,                                // user info
+            true                                // deliver immediately
         )
     }
 }
