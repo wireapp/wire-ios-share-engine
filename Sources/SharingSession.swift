@@ -98,6 +98,17 @@ class AuthenticationStatus : AuthenticationStatusProvider {
     
 }
 
+extension BackendEnvironmentProvider {
+    func cookieStorage(for account: Account) -> ZMPersistentCookieStorage {
+        let backendURL = self.backendURL.host!
+        return ZMPersistentCookieStorage(forServerName: backendURL, userIdentifier: account.userIdentifier)
+    }
+    
+    public func isAuthenticated(_ account: Account) -> Bool {
+        return cookieStorage(for: account).authenticationCookieData != nil
+    }
+}
+
 class ApplicationStatusDirectory : ApplicationStatus {
 
     let transportSession : ZMTransportSession
@@ -231,7 +242,7 @@ public class SharingSession {
     /// no user is currently logged in.
     /// - returns: The initialized session object if no error is thrown
     
-    public convenience init(applicationGroupIdentifier: String, accountIdentifier: UUID, hostBundleIdentifier: String, environment: BackendEnvironment) throws {
+    public convenience init(applicationGroupIdentifier: String, accountIdentifier: UUID, hostBundleIdentifier: String, environment: BackendEnvironmentProvider) throws {
         let sharedContainerURL = FileManager.sharedContainerDirectory(for: applicationGroupIdentifier)
         guard !StorageStack.shared.needsToRelocateOrMigrateLocalStack(accountIdentifier: accountIdentifier, applicationContainer: sharedContainerURL) else { throw InitializationError.needsMigration }
         
@@ -367,7 +378,10 @@ public class SharingSession {
             forName: contextWasMergedNotification,
             object: nil,
             queue: .main,
-            using: { [weak self] note in self?.saveNotificationPersistence.add(note) }
+            using: { [weak self] note in
+                self?.saveNotificationPersistence.add(note)
+                DarwinNotification.shareExtDidSaveNote.post()
+            }
         )
     }
 
