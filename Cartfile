@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/unordered-relations-masked"
+github "wireapp/wire-ios-request-strategy" ~> 121.0
