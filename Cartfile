@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "fix/decouple-password"
+github "wireapp/wire-ios-request-strategy" ~> 128.0
