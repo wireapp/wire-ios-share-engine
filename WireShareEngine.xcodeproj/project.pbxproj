@@ -118,7 +118,6 @@
 		5470D4101D76E2A400FDE440 /* project-common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "project-common.xcconfig"; sourceTree = "<group>"; };
 		5470D4111D76E2A400FDE440 /* project-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "project-debug.xcconfig"; sourceTree = "<group>"; };
 		5470D4121D76E2A400FDE440 /* project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
-		5470D4141D76E2A400FDE440 /* swift.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = swift.xcconfig; sourceTree = "<group>"; };
 		5470D4151D76E2A400FDE440 /* tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = tests.xcconfig; sourceTree = "<group>"; };
 		5470D4161D76E2A400FDE440 /* warnings-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "warnings-debug.xcconfig"; sourceTree = "<group>"; };
 		5470D4171D76E2A400FDE440 /* warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = warnings.xcconfig; sourceTree = "<group>"; };
@@ -287,7 +286,6 @@
 				5470D4101D76E2A400FDE440 /* project-common.xcconfig */,
 				5470D4111D76E2A400FDE440 /* project-debug.xcconfig */,
 				5470D4121D76E2A400FDE440 /* project.xcconfig */,
-				5470D4141D76E2A400FDE440 /* swift.xcconfig */,
 				5470D4151D76E2A400FDE440 /* tests.xcconfig */,
 				5470D4161D76E2A400FDE440 /* warnings-debug.xcconfig */,
 				5470D4171D76E2A400FDE440 /* warnings.xcconfig */,
