@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/align-security-lh-behavior"
+github "wireapp/wire-ios-request-strategy" ~> 151.0
