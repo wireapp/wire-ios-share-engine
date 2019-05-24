@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/legalhold"
+github "wireapp/wire-ios-request-strategy" ~> 152.0
