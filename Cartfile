@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "feature/handle-lh-flag"
+github "wireapp/wire-ios-request-strategy" ~> 155.0
