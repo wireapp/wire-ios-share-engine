@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" ~> 155.0
+github "wireapp/wire-ios-request-strategy" "feature/has-legal-hold-observation"
