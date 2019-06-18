@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" ~> 157.0
+github "wireapp/wire-ios-request-strategy" "feature/lh-create-client"
