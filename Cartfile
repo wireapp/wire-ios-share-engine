@@ -1,1 +1,1 @@
-github "wireapp/wire-ios-request-strategy" "fix/lh-forced-update-dupe-message"
+github "wireapp/wire-ios-request-strategy" ~> 160.0
