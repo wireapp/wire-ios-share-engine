@@ -580,9 +580,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5470D4081D76E2A400FDE440 /* wire-ios-share-engine.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
+				VALID_ARCHS = "arm64 arm64e armv7s";
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
 			};
 			name = Debug;
 		};
@@ -590,9 +594,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5470D4081D76E2A400FDE440 /* wire-ios-share-engine.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wire.wire-ios-share-engine";
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Release;
 		};
