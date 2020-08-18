@@ -24,14 +24,6 @@ import WireRequestStrategy
 import WireLinkPreview
 
 class PushMessageHandlerDummy : NSObject, PushMessageHandler {
-
-    func process(_ message: ZMMessage) {
-        // nop
-    }
-
-    public func process(_ event: ZMUpdateEvent) {
-        // nop
-    }
     
     func didFailToSend(_ message: ZMMessage) {
         // nop
