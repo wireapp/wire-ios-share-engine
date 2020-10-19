@@ -1,7 +1,7 @@
 github "wireapp/HTMLString" "6.0.1_xcode12.2"
 github "wireapp/swift-protobuf" "1.12.0_xcode12.2"
 github "wireapp/wire-ios-cryptobox" "23.0.0"
-github "wireapp/wire-ios-data-model" "227.0.0"
+github "wireapp/wire-ios-data-model" "chore/xcode12"
 
 github "wireapp/wire-ios-link-preview" "chore/xcode12"
 github "wireapp/wire-ios-mocktransport" "120.0.1"
