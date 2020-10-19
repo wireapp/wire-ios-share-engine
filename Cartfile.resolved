@@ -15,5 +15,5 @@ github "wireapp/ocmock" "v3.4.3"
 github "wireapp/wire-ios-images" "31.0.0"
 
 github "wireapp/wire-ios-testing" "22.0.0"
-github "wireapp/wire-ios-transport" "71.0.0"
+github "wireapp/wire-ios-transport" "chore/xcode12"
 github "wireapp/wire-ios-utilities" "37.3.0"
