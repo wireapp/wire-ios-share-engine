@@ -29,9 +29,7 @@ public protocol SharingSessionEncryptionAtRestInterface {
 extension SharingSession: SharingSessionEncryptionAtRestInterface {
     
     public var encryptMessagesAtRest: Bool {
-        get {
-            return  userInterfaceContext.encryptMessagesAtRest
-        }
+        return userInterfaceContext.encryptMessagesAtRest
     }
     
     public var isDatabaseLocked: Bool {
