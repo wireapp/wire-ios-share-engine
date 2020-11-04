@@ -1,33 +1,93 @@
 //
-//  SharingSessionTest+EncryptionAtRest.swift
-//  WireShareEngineTests
+// Wire
+// Copyright (C) 2020 Wire Swiss GmbH
 //
-//  Created by Jacob Persson on 04.11.20.
-//  Copyright © 2020 com.wire. All rights reserved.
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program. If not, see http://www.gnu.org/licenses/.
 //
 
 import XCTest
+import LocalAuthentication
+import WireDataModel
+@testable import WireShareEngine
 
-class SharingSessionTest_EncryptionAtRest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class SharingSessionTests_EncryptionAtRest: BaseSharingSessionTests {
+    
+    // MARK: - Life Cycle
+    
+    override func tearDown() {
+        // Delete keychain items
+        let account = Account(userName: "", userIdentifier: accountIdentifier)
+        try! EncryptionKeys.deleteKeys(for: account)
+        
+        super.tearDown()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // MARK: - Database locking/unlocking
+    
+    func testThatDatabaseIsUnlocked_WhenEncryptionAtRestIsDisabled() {
+        // given
+        encryptionAtRestEnabled = false
+        XCTAssertTrue(waitForAllGroupsToBeEmpty(withTimeout: 0.5))
+        
+        // then
+        XCTAssertFalse(sharingSession.isDatabaseLocked)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testThatDatabaseIsLocked_BeforeUnlockingDatabase() throws {
+        // given
+        encryptionAtRestEnabled = true
+        XCTAssertTrue(waitForAllGroupsToBeEmpty(withTimeout: 0.5))
+                
+        // then
+        XCTAssertTrue(sharingSession.isDatabaseLocked)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            
+    func testThatDatabaseIsUnlocked_AfterUnlockingDatabase() throws {
+        // given
+        encryptionAtRestEnabled = true
+        XCTAssertTrue(waitForAllGroupsToBeEmpty(withTimeout: 0.5))
+                
+        // when
+        let context = LAContext()
+        try sharingSession.unlockDatabase(with: context)
+        XCTAssertTrue(waitForAllGroupsToBeEmpty(withTimeout: 0.5))
+        
+        // then
+        XCTAssertFalse(sharingSession.isDatabaseLocked)
+    }
+    
+    // MARK: - Helpers
+        
+    var encryptionAtRestEnabled: Bool {
+        
+        set {
+            let account = Account(userName: "", userIdentifier: accountIdentifier)
+            
+            try! EncryptionKeys.deleteKeys(for: account)
+            sharingSession.contextDirectory.clearEncryptionKeysInAllContexts()
+            
+            if newValue {
+                _ = try! EncryptionKeys.createKeys(for: account)
+            }
+            
+            sharingSession.userInterfaceContext.encryptMessagesAtRest = newValue
+            sharingSession.userInterfaceContext.saveOrRollback()
+        }
+        
+        get {
+            return sharingSession.userInterfaceContext.encryptMessagesAtRest
         }
     }
-
+    
 }
