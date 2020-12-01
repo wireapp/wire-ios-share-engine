@@ -280,7 +280,9 @@ public class SharingSession {
         self.applicationStatusDirectory = applicationStatusDirectory
         self.operationLoop = operationLoop
         self.strategyFactory = strategyFactory
-        self.appLockController = AppLockController(config: appLockConfig)
+        
+        let selfUser = ZMUser.selfUser(in: contextDirectory.uiContext)
+        self.appLockController = AppLockController(config: appLockConfig, selfUser: selfUser)
         
         guard applicationStatusDirectory.authenticationStatus.state == .authenticated else { throw InitializationError.loggedOut }
         
