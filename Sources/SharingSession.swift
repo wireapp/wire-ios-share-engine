@@ -199,7 +199,7 @@ public class SharingSession {
 
     private let strategyFactory: StrategyFactory
     
-    public let appLockController: AppLockController
+    public let appLockController: AppLockType
         
     /// Initializes a new `SessionDirectory` to be used in an extension environment
     /// - parameter databaseDirectory: The `NSURL` of the shared group container
