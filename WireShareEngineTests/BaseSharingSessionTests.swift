@@ -118,11 +118,6 @@ class BaseSharingSessionTests: ZMTBaseTest {
 
 extension AppLockController.Config {
     static var defaultConfig: AppLockController.Config {
-        Self.init(
-            useBiometricsOrAccountPassword: false,
-            useCustomCodeInsteadOfAccountPassword: false,
-            forceAppLock: false,
-            timeOut: 10
-        )
+        Self.init(useBiometricsOrCustomPasscode: false, forceAppLock: false, timeOut: 10)
     }
 }
