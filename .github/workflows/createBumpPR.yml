@@ -5,7 +5,7 @@ on:
 
 jobs:
   create-bump-pr:
-    runs-on: ubuntu-20.04
+    runs-on: macos-11.0
 
     steps:
       - name: checkout
