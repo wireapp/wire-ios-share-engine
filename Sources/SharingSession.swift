@@ -219,7 +219,11 @@ public class SharingSession {
         let coreDataStack = CoreDataStack(account: Account(userName: "", userIdentifier: accountIdentifier),
                                           applicationContainer: sharedContainerURL)
 
-        guard !coreDataStack.needsMigration else {
+        guard coreDataStack.storesExists else {
+            throw InitializationError.missingSharedContainer
+        }
+
+        guard !coreDataStack.needsMigration  else {
             throw InitializationError.needsMigration
         }
 
