@@ -227,15 +227,10 @@ public class SharingSession {
             throw InitializationError.needsMigration
         }
 
-        let group = DispatchGroup()
         var storeError: Error?
-
-        group.enter()
         coreDataStack.loadStores { error in
-            storeError = error
-            group.leave()
+            storeError = storeError
         }
-        group.wait()
 
         guard storeError == nil else { throw InitializationError.missingSharedContainer }
 
