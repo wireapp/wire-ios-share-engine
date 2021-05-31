@@ -1,4 +1,4 @@
 framework=WireShareEngine
-organization=wireapp
+organization=billypchan
 repository=wire-ios-share-engine
 release-name-format=I'd like a {ADJECTIVE} {FOOD_INGREDIENT} and {FOOD_INGREDIENT} burger without {FOOD_INGREDIENT}, please
