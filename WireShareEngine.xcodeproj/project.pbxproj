@@ -10,6 +10,7 @@
 		165C55F62551AF1300731CA9 /* SharingSession+EncryptionAtRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C55F52551AF1300731CA9 /* SharingSession+EncryptionAtRest.swift */; };
 		166DCD9E2552969B004F4F59 /* SharingSessionTests+EncryptionAtRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DCD9D2552969B004F4F59 /* SharingSessionTests+EncryptionAtRest.swift */; };
 		5470D3F31D76E1B000FDE440 /* WireShareEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5470D3E81D76E1B000FDE440 /* WireShareEngine.framework */; };
+		A94D2AD2266A130300519A39 /* WireMockTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9D266576B900FB8D26 /* WireMockTransport.xcframework */; };
 		A958DBA5266576B900FB8D26 /* WireRequestStrategy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB98266576B900FB8D26 /* WireRequestStrategy.xcframework */; };
 		A958DBA7266576B900FB8D26 /* WireUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB99266576B900FB8D26 /* WireUtilities.xcframework */; };
 		A958DBA9266576B900FB8D26 /* WireCryptobox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9A266576B900FB8D26 /* WireCryptobox.xcframework */; };
@@ -163,6 +164,7 @@
 			files = (
 				A958DBC52665830900FB8D26 /* WireTesting.xcframework in Frameworks */,
 				A958DBC72665830A00FB8D26 /* OCMock.xcframework in Frameworks */,
+				A94D2AD2266A130300519A39 /* WireMockTransport.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
