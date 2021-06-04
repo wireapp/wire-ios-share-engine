@@ -15,7 +15,6 @@
 		A958DBA9266576B900FB8D26 /* WireCryptobox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9A266576B900FB8D26 /* WireCryptobox.xcframework */; };
 		A958DBAB266576B900FB8D26 /* WireProtos.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9B266576B900FB8D26 /* WireProtos.xcframework */; };
 		A958DBAD266576B900FB8D26 /* PINCache.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9C266576B900FB8D26 /* PINCache.xcframework */; };
-		A958DBAF266576B900FB8D26 /* WireMockTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9D266576B900FB8D26 /* WireMockTransport.xcframework */; };
 		A958DBB1266576B900FB8D26 /* SwiftProtobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9E266576B900FB8D26 /* SwiftProtobuf.xcframework */; };
 		A958DBB3266576B900FB8D26 /* HTMLString.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DB9F266576B900FB8D26 /* HTMLString.xcframework */; };
 		A958DBB5266576B900FB8D26 /* WireLinkPreview.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DBA0266576B900FB8D26 /* WireLinkPreview.xcframework */; };
@@ -136,7 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A958DBBD266576BA00FB8D26 /* WireImages.xcframework in Frameworks */,
-				A958DBAF266576B900FB8D26 /* WireMockTransport.xcframework in Frameworks */,
 				A958DBB3266576B900FB8D26 /* HTMLString.xcframework in Frameworks */,
 				A958DBB1266576B900FB8D26 /* SwiftProtobuf.xcframework in Frameworks */,
 				A958DBA5266576B900FB8D26 /* WireRequestStrategy.xcframework in Frameworks */,
