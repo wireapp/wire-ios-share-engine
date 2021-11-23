@@ -153,11 +153,11 @@ public class SharingSession {
     
     /// The `NSManagedObjectContext` used to retrieve the conversations
     var userInterfaceContext: NSManagedObjectContext {
-        return contextDirectory.uiContext
+        return coreDataStack.viewContext
     }
 
     private var syncContext: NSManagedObjectContext {
-        return contextDirectory.syncContext
+        return coreDataStack.syncContext
     }
 
     /// Directory of all application statuses
@@ -172,7 +172,7 @@ public class SharingSession {
 
     let transportSession: ZMTransportSession
     
-    var contextDirectory: ManagedObjectContextDirectory!
+    let coreDataStack: CoreDataStack
     
     /// The `ZMConversationListDirectory` containing all conversation lists
     private var directory: ZMConversationListDirectory {
@@ -200,6 +200,11 @@ public class SharingSession {
     private let strategyFactory: StrategyFactory
     
     public let appLockController: AppLockType
+
+    public var fileSharingFeature: Feature.FileSharing {
+        let featureService = FeatureService(context: coreDataStack.viewContext)
+        return featureService.fetchFileSharing()
+    }
         
     /// Initializes a new `SessionDirectory` to be used in an extension environment
     /// - parameter databaseDirectory: The `NSURL` of the shared group container
@@ -212,35 +217,28 @@ public class SharingSession {
                             accountIdentifier: UUID,
                             hostBundleIdentifier: String,
                             environment: BackendEnvironmentProvider,
-                            appLockConfig: AppLockController.Config) throws {
+                            appLockConfig: AppLockController.LegacyConfig?) throws {
+
         let sharedContainerURL = FileManager.sharedContainerDirectory(for: applicationGroupIdentifier)
-        guard !StorageStack.shared.needsToRelocateOrMigrateLocalStack(accountIdentifier: accountIdentifier, applicationContainer: sharedContainerURL) else { throw InitializationError.needsMigration }
-        
-        let group = DispatchGroup()
-        
-        var directory: ManagedObjectContextDirectory!
-        group.enter()
-        StorageStack.shared.createManagedObjectContextDirectory(
-            accountIdentifier: accountIdentifier,
-            applicationContainer: sharedContainerURL,
-            startedMigrationCallback: {  },
-            completionHandler: { contextDirectory in
-                directory = contextDirectory
-                group.leave()
-            }
-        )
-        
-        var didCreateStorageStack = false
-        group.notify(queue: .global()) { 
-            didCreateStorageStack = true
+
+        let coreDataStack = CoreDataStack(account: Account(userName: "", userIdentifier: accountIdentifier),
+                                          applicationContainer: sharedContainerURL)
+
+        guard coreDataStack.storesExists else {
+            throw InitializationError.missingSharedContainer
         }
-        
-        while !didCreateStorageStack {
-            if !RunLoop.current.run(mode: RunLoop.Mode.default, before: Date(timeIntervalSinceNow: 0.002)) {
-                Thread.sleep(forTimeInterval: 0.002)
-            }
+
+        guard !coreDataStack.needsMigration  else {
+            throw InitializationError.needsMigration
         }
-        
+
+        var storeError: Error?
+        coreDataStack.loadStores { error in
+            storeError = storeError
+        }
+
+        guard storeError == nil else { throw InitializationError.missingSharedContainer }
+
         let cookieStorage = ZMPersistentCookieStorage(forServerName: environment.backendURL.host!, userIdentifier: accountIdentifier)
         let reachabilityGroup = ZMSDispatchGroup(dispatchGroup: DispatchGroup(), label: "Sharing session reachability")!
         let serverNames = [environment.backendURL, environment.backendWSURL].compactMap { $0.host }
@@ -254,18 +252,18 @@ public class SharingSession {
             applicationGroupIdentifier: applicationGroupIdentifier,
             applicationVersion: "1.0.0"
         )
-        
+
         try self.init(
             accountIdentifier: accountIdentifier,
-            contextDirectory: directory,
+            coreDataStack: coreDataStack,
             transportSession: transportSession,
             cachesDirectory: FileManager.default.cachesURLForAccount(with: accountIdentifier, in: sharedContainerURL),
-            accountContainer: StorageStack.accountFolder(accountIdentifier: accountIdentifier, applicationContainer: sharedContainerURL),
+            accountContainer: CoreDataStack.accountDataFolder(accountIdentifier: accountIdentifier, applicationContainer: sharedContainerURL),
             appLockConfig: appLockConfig)
     }
     
     internal init(accountIdentifier: UUID,
-                  contextDirectory: ManagedObjectContextDirectory,
+                  coreDataStack: CoreDataStack,
                   transportSession: ZMTransportSession,
                   cachesDirectory: URL,
                   saveNotificationPersistence: ContextDidSaveNotificationPersistence,
@@ -273,10 +271,10 @@ public class SharingSession {
                   applicationStatusDirectory: ApplicationStatusDirectory,
                   operationLoop: RequestGeneratingOperationLoop,
                   strategyFactory: StrategyFactory,
-                  appLockConfig: AppLockController.Config
+                  appLockConfig: AppLockController.LegacyConfig?
         ) throws {
         
-        self.contextDirectory = contextDirectory
+        self.coreDataStack = coreDataStack
         self.transportSession = transportSession
         self.saveNotificationPersistence = saveNotificationPersistence
         self.analyticsEventPersistence = analyticsEventPersistence
@@ -284,8 +282,8 @@ public class SharingSession {
         self.operationLoop = operationLoop
         self.strategyFactory = strategyFactory
         
-        let selfUser = ZMUser.selfUser(in: contextDirectory.uiContext)
-        self.appLockController = AppLockController(userId: accountIdentifier, config: appLockConfig, selfUser: selfUser)
+        let selfUser = ZMUser.selfUser(in: coreDataStack.viewContext)
+        self.appLockController = AppLockController(userId: accountIdentifier, selfUser: selfUser, legacyConfig: appLockConfig)
         
         guard applicationStatusDirectory.authenticationStatus.state == .authenticated else { throw InitializationError.loggedOut }
         
@@ -294,17 +292,17 @@ public class SharingSession {
     }
     
     public convenience init(accountIdentifier: UUID,
-                            contextDirectory: ManagedObjectContextDirectory,
+                            coreDataStack: CoreDataStack,
                             transportSession: ZMTransportSession,
                             cachesDirectory: URL,
                             accountContainer: URL,
-                            appLockConfig: AppLockController.Config) throws {
+                            appLockConfig: AppLockController.LegacyConfig?) throws {
         
-        let applicationStatusDirectory = ApplicationStatusDirectory(syncContext: contextDirectory.syncContext, transportSession: transportSession)
-        let linkPreviewPreprocessor = LinkPreviewPreprocessor(linkPreviewDetector: applicationStatusDirectory.linkPreviewDetector, managedObjectContext: contextDirectory.syncContext)
+        let applicationStatusDirectory = ApplicationStatusDirectory(syncContext: coreDataStack.syncContext, transportSession: transportSession)
+        let linkPreviewPreprocessor = LinkPreviewPreprocessor(linkPreviewDetector: applicationStatusDirectory.linkPreviewDetector, managedObjectContext: coreDataStack.syncContext)
         
         let strategyFactory = StrategyFactory(
-            syncContext: contextDirectory.syncContext,
+            syncContext: coreDataStack.syncContext,
             applicationStatus: applicationStatusDirectory,
             linkPreviewPreprocessor: linkPreviewPreprocessor
         )
@@ -312,8 +310,8 @@ public class SharingSession {
         let requestGeneratorStore = RequestGeneratorStore(strategies: strategyFactory.strategies)
 
         let operationLoop = RequestGeneratingOperationLoop(
-            userContext: contextDirectory.uiContext,
-            syncContext: contextDirectory.syncContext,
+            userContext: coreDataStack.viewContext,
+            syncContext: coreDataStack.syncContext,
             callBackQueue: .main,
             requestGeneratorStore: requestGeneratorStore,
             transportSession: transportSession
@@ -324,7 +322,7 @@ public class SharingSession {
         
         try self.init(
             accountIdentifier: accountIdentifier,
-            contextDirectory: contextDirectory,
+            coreDataStack: coreDataStack,
             transportSession: transportSession,
             cachesDirectory: cachesDirectory,
             saveNotificationPersistence: saveNotificationPersistence,
