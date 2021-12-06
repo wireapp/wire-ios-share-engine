@@ -64,7 +64,7 @@ extension ZMConversation: Conversation {
     }
 
     /// Adds an observer for when the conversation verification status degrades
-    public func add(conversationVerificationDegradedObserver: @escaping (ConversationDegradationInfo)->Void) -> TearDownCapable {
+    public func add(conversationVerificationDegradedObserver: @escaping (ConversationDegradationInfo) -> Void) -> TearDownCapable {
         return DegradationObserver(conversation: self, callback: conversationVerificationDegradedObserver)
     }
 }
@@ -82,11 +82,11 @@ public struct ConversationDegradationInfo {
 
 final class DegradationObserver: NSObject, ZMConversationObserver, TearDownCapable {
 
-    let callback: (ConversationDegradationInfo)->Void
+    let callback: (ConversationDegradationInfo) -> Void
     let conversation: ZMConversation
     private var observer: Any?
 
-    init(conversation: ZMConversation, callback: @escaping (ConversationDegradationInfo)->Void) {
+    init(conversation: ZMConversation, callback: @escaping (ConversationDegradationInfo) -> Void) {
         self.callback = callback
         self.conversation = conversation
         super.init()
