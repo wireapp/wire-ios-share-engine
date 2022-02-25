@@ -83,7 +83,7 @@ final class RequestGeneratorStoreTests: ZMTBaseTest {
 
     func testThatItReturnAProperRequest() {
 
-        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: 0)
+        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: .v0)
 
         let generator = DummyGenerator(requestBlock: {
             return sourceRequest
@@ -100,7 +100,7 @@ final class RequestGeneratorStoreTests: ZMTBaseTest {
 
     func testThatItReturnARequestWhenARequestGeneratorIsAddedDirectly() {
         // Given
-        let sourceRequest = ZMTransportRequest(path: "/path", method: .methodGET, payload: nil, apiVersion: 0)
+        let sourceRequest = ZMTransportRequest(path: "/path", method: .methodGET, payload: nil, apiVersion: .v0)
         let strategy = MockRequestStrategy(request: sourceRequest)
         sut = RequestGeneratorStore(strategies: [strategy])
 
@@ -114,7 +114,7 @@ final class RequestGeneratorStoreTests: ZMTBaseTest {
 
     func testThatItReturnAProperRequestAndNoRequestAfter() {
 
-        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: 0)
+        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: .v0)
 
         var requestCalled = false
 
@@ -141,8 +141,8 @@ final class RequestGeneratorStoreTests: ZMTBaseTest {
 
     func testThatItReturnsRequestFromMultipleGenerators() {
 
-        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: 0)
-        let sourceRequest2 = ZMTransportRequest(path: "some path 2", method: .methodPOST, payload: nil, apiVersion: 0)
+        let sourceRequest = ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: .v0)
+        let sourceRequest2 = ZMTransportRequest(path: "some path 2", method: .methodPOST, payload: nil, apiVersion: .v0)
 
         var requestCalled = false
 
