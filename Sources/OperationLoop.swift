@@ -42,7 +42,7 @@ final class RequestGeneratorStore {
             if let requestGeneratorSource = strategy as? ZMRequestGeneratorSource {
                 for requestGenerator in requestGeneratorSource.requestGenerators {
                     requestGenerators.append({
-                        return requestGenerator.nextRequest()
+                        return requestGenerator.nextRequest(for: .v0)
                     })
                 }
             }
@@ -57,7 +57,7 @@ final class RequestGeneratorStore {
 
             if let requestStrategy = strategy as? RequestStrategy {
                 requestGenerators.append({
-                    requestStrategy.nextRequest()
+                    requestStrategy.nextRequest(for: .v0)
                 })
             }
         }
