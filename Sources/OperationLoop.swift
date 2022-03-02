@@ -42,7 +42,8 @@ final class RequestGeneratorStore {
             if let requestGeneratorSource = strategy as? ZMRequestGeneratorSource {
                 for requestGenerator in requestGeneratorSource.requestGenerators {
                     requestGenerators.append({
-                        return requestGenerator.nextRequest(for: .v0)
+                        guard let apiVersion = ZMAPIVersion.current else { return nil }
+                        return requestGenerator.nextRequest(for: apiVersion)
                     })
                 }
             }
@@ -57,7 +58,8 @@ final class RequestGeneratorStore {
 
             if let requestStrategy = strategy as? RequestStrategy {
                 requestGenerators.append({
-                    requestStrategy.nextRequest(for: .v0)
+                    guard let apiVersion = ZMAPIVersion.current else { return nil }
+                    return requestStrategy.nextRequest(for: apiVersion)
                 })
             }
         }

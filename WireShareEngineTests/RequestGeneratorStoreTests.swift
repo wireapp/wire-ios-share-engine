@@ -57,8 +57,37 @@ final class RequestGeneratorStoreTests: ZMTBaseTest {
 
     }
 
-    var mockStrategy = MockStrategy()
+    var mockStrategy: MockStrategy!
     var sut: RequestGeneratorStore! = nil
+
+    override func setUp() {
+        super.setUp()
+        ZMAPIVersion.current = .v0
+        mockStrategy = MockStrategy()
+    }
+
+    override func tearDown() {
+        mockStrategy = nil
+        sut.tearDown()
+        sut = nil
+        super.tearDown()
+    }
+
+    func testThatItDoesNOTReturnARequestIfNoAPIVersionIsSelected() {
+        // Given
+        mockStrategy.requestGenerators.append(DummyGenerator(requestBlock: {
+            return ZMTransportRequest(path: "some path", method: .methodGET, payload: nil, apiVersion: .v0)
+        }))
+
+        sut = RequestGeneratorStore(strategies: [mockStrategy])
+        XCTAssertNotNil(sut.nextRequest())
+
+        // When
+        ZMAPIVersion.current = nil
+
+        // Then
+        XCTAssertNil(sut.nextRequest())
+    }
 
     func testThatItDoesNOTReturnARequestIfNoGeneratorsGiven() {
         sut = RequestGeneratorStore(strategies: [])
