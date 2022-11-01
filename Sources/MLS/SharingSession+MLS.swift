@@ -30,7 +30,7 @@ extension SharingSession {
     ) {
         syncContext.performAndWait {
             do {
-                let coreCrypto = try CoreCryptoFactory.coreCrypto(
+                let coreCrypto = try CoreCryptoFactory().coreCrypto(
                     sharedContainerURL: sharedContainerURL,
                     syncContext: syncContext,
                     coreCryptoSetup: coreCryptoSetup
@@ -38,7 +38,7 @@ extension SharingSession {
                 let mlsController = MLSEncryptionController(coreCrypto: coreCrypto)
                 syncContext.setMLSController(mlsController: mlsController)
             } catch {
-                logger.warn("Failed to setup MLSController: \(String(describing: error))")
+                logger.warn("Failed to setup MLSController for share extension: \(String(describing: error))")
             }
         }
     }
