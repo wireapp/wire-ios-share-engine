@@ -23,7 +23,7 @@ import WireTesting
 import WireMockTransport
 @testable import WireShareEngine
 
-class SharingSessionTests_MLS: ZMTBaseTest {
+class SharingSessionTestsMLS: ZMTBaseTest {
     func test_ItSetsUpMLSController_OnInit() throws {
         // GIVEN
         let accountIdentifier = UUID.create()
