@@ -28,6 +28,7 @@
 		A958DBC72665830A00FB8D26 /* OCMock.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A958DBC42665830900FB8D26 /* OCMock.xcframework */; };
 		63172F792902A42700DBECC9 /* SharingSession+MLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63172F782902A42700DBECC9 /* SharingSession+MLS.swift */; };
 		63172F96290AB47500DBECC9 /* MLSEncryptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63172F95290AB47500DBECC9 /* MLSEncryptionController.swift */; };
+		637ED12E29119689001157F4 /* SharingSessionTests+MLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED12D29119689001157F4 /* SharingSessionTests+MLS.swift */; };
 		BFA18BD41D806050005C281B /* BaseSharingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA18BD31D806050005C281B /* BaseSharingSessionTests.swift */; };
 		CE7FBFC41E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */; };
 		CEB50AEC1DF9BADF00211B30 /* OperationLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */; };
@@ -111,6 +112,7 @@
 		A958DBC42665830900FB8D26 /* OCMock.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OCMock.xcframework; path = Carthage/Build/OCMock.xcframework; sourceTree = "<group>"; };
 		63172F782902A42700DBECC9 /* SharingSession+MLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharingSession+MLS.swift"; sourceTree = "<group>"; };
 		63172F95290AB47500DBECC9 /* MLSEncryptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSEncryptionController.swift; sourceTree = "<group>"; };
+		637ED12D29119689001157F4 /* SharingSessionTests+MLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharingSessionTests+MLS.swift"; sourceTree = "<group>"; };
 		A9FF19B027A013780067DC26 /* ios-arm64Simulator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "ios-arm64Simulator.xcconfig"; path = "Carthage/Checkouts/wire-ios-system/Resources/Configurations/zmc-config/ios-arm64Simulator.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BFA18BD31D806050005C281B /* BaseSharingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSharingSessionTests.swift; sourceTree = "<group>"; };
 		CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGeneratorStoreTests.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				BFA18BD31D806050005C281B /* BaseSharingSessionTests.swift */,
 				F125E9B41E28DB06006583A2 /* SharingSessionTests.swift */,
 				166DCD9D2552969B004F4F59 /* SharingSessionTests+EncryptionAtRest.swift */,
+				637ED12D29119689001157F4 /* SharingSessionTests+MLS.swift */,
 				CEB50AEB1DF9BADF00211B30 /* OperationLoopTests.swift */,
 				CE7FBFC31E015C5900E1C4C9 /* RequestGeneratorStoreTests.swift */,
 			);
@@ -506,6 +509,7 @@
 				BFA18BD41D806050005C281B /* BaseSharingSessionTests.swift in Sources */,
 				CEB50AEC1DF9BADF00211B30 /* OperationLoopTests.swift in Sources */,
 				166DCD9E2552969B004F4F59 /* SharingSessionTests+EncryptionAtRest.swift in Sources */,
+				637ED12E29119689001157F4 /* SharingSessionTests+MLS.swift in Sources */,
 				F125E9B51E28DB06006583A2 /* SharingSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
