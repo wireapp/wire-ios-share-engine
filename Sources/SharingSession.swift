@@ -243,6 +243,8 @@ public class SharingSession {
 
         let transportSession =  ZMTransportSession(
             environment: environment,
+            proxyUsername: { fatalError("From where would we get credentials?") }(),
+            proxyPassword: { fatalError("From where would we get credentials?") }(),
             cookieStorage: cookieStorage,
             reachability: reachability,
             initialAccessToken: nil,
