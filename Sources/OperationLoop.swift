@@ -163,7 +163,6 @@ final class OperationLoop: NSObject, RequestAvailableObserver {
             onSave(note, insertedObjects, updatedObjects)
             }
         }
-    }
 
     func merge(changes notification: Notification, intoContext context: NSManagedObjectContext) {
         let moc = notification.object as! NSManagedObjectContext
